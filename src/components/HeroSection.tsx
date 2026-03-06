@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { MapPin, Download, ArrowDown } from "lucide-react";
-import Particles from "./Particles";
 import photoUrl from "@/assets/antoine-photo.jpg";
 
 const subtitlesEN = [
@@ -23,46 +22,64 @@ export default function HeroSection() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
+  const [phase, setPhase] = useState<"typing" | "waiting" | "deleting" | "pause">("typing");
 
   useEffect(() => {
     const current = subtitles[currentIndex];
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        setDisplayText(current.slice(0, displayText.length + 1));
-        if (displayText.length === current.length) {
-          setTimeout(() => setIsDeleting(true), 2000);
-        }
-      } else {
-        setDisplayText(current.slice(0, displayText.length - 1));
-        if (displayText.length === 0) {
-          setIsDeleting(false);
-          setCurrentIndex((prev) => (prev + 1) % subtitles.length);
-        }
-      }
-    }, isDeleting ? 30 : 60);
 
-    return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, currentIndex, subtitles]);
+    if (phase === "typing") {
+      if (displayText.length < current.length) {
+        const timeout = setTimeout(() => {
+          setDisplayText(current.slice(0, displayText.length + 1));
+        }, 80);
+        return () => clearTimeout(timeout);
+      } else {
+        setPhase("waiting");
+      }
+    }
+
+    if (phase === "waiting") {
+      const timeout = setTimeout(() => setPhase("deleting"), 2000);
+      return () => clearTimeout(timeout);
+    }
+
+    if (phase === "deleting") {
+      if (displayText.length > 0) {
+        const timeout = setTimeout(() => {
+          setDisplayText(displayText.slice(0, -1));
+        }, 50);
+        return () => clearTimeout(timeout);
+      } else {
+        setPhase("pause");
+      }
+    }
+
+    if (phase === "pause") {
+      const timeout = setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % subtitles.length);
+        setPhase("typing");
+      }, 300);
+      return () => clearTimeout(timeout);
+    }
+  }, [displayText, phase, currentIndex, subtitles]);
 
   // Reset when language changes
   useEffect(() => {
     setDisplayText("");
-    setIsDeleting(false);
+    setPhase("typing");
     setCurrentIndex(0);
   }, [lang]);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
-      <Particles />
       <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 flex flex-col lg:flex-row items-center gap-12">
         {/* Text */}
         <div className="flex-1 text-center lg:text-left">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4 text-foreground">
+          <h1 className="text-5xl md:text-7xl font-black tracking-wider mb-4 text-foreground uppercase">
             Antoine <span className="text-gradient">Monie</span>
           </h1>
           <div className="h-10 mb-6">
-            <span className="text-xl md:text-2xl font-medium text-primary">
+            <span className="text-xl md:text-2xl font-subheading font-semibold text-primary">
               {displayText}
             </span>
             <span className="cursor-blink text-primary text-2xl">|</span>

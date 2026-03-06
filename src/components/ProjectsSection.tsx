@@ -11,7 +11,7 @@ interface Project {
 }
 
 const projects: Project[] = [
-  { nameKey: "proj.1.name", descKey: "proj.1.desc", tags: ["Shopify", "SEO", "UX", "EcommerceOps"], url: "https://helocosmetics.com", color: "from-primary/20 to-secondary/20" },
+  { nameKey: "proj.1.name", descKey: "proj.1.desc", tags: ["Webflow", "SEO", "UX", "EcommerceOps"], url: "https://helocosmetics.com", color: "from-primary/20 to-secondary/20" },
   { nameKey: "proj.2.name", descKey: "proj.2.desc", tags: ["Shopify", "Configuration", "ProductManagement"], url: "https://gemology.be", color: "from-secondary/20 to-primary/20" },
   { nameKey: "proj.3.name", descKey: "proj.3.desc", tags: ["Shopify", "ProjectManagement", "UX"], url: "https://origine-spa.be", color: "from-primary/20 to-secondary/10" },
   { nameKey: "proj.4.name", descKey: "proj.4.desc", tags: ["Shopify", "CRO", "SEO"], url: "https://ouate-paris.be", color: "from-secondary/10 to-primary/20" },
@@ -23,13 +23,12 @@ export default function ProjectsSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="projects" className="py-24 px-4 bg-card/50">
+    <section id="projects" className="py-24 px-4">
       <div className="max-w-6xl mx-auto section-fade-in">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gradient">{t("projects.title")}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gradient tracking-wider uppercase">{t("projects.title")}</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
           {projects.map((proj) => (
             <div key={proj.nameKey} className="rounded-xl border border-border bg-card overflow-hidden hover:border-primary/30 transition-colors group">
-              {/* Color header */}
               <div className={`h-32 bg-gradient-to-br ${proj.color} flex items-center justify-center`}>
                 <span className="text-2xl font-bold text-foreground/40">{t(proj.nameKey).charAt(0)}</span>
               </div>
@@ -60,7 +59,6 @@ export default function ProjectsSection() {
             </div>
           ))}
 
-          {/* Coming soon card */}
           <div className="rounded-xl border border-dashed border-border bg-card/50 flex items-center justify-center min-h-[280px]">
             <div className="text-center text-muted-foreground">
               <Plus size={32} className="mx-auto mb-2 opacity-40" />

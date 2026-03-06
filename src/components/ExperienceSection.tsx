@@ -51,19 +51,15 @@ export default function ExperienceSection() {
   return (
     <section id="experience" className="py-24 px-4">
       <div className="max-w-4xl mx-auto section-fade-in">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gradient">{t("exp.title")}</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gradient tracking-wider uppercase">{t("exp.title")}</h2>
         <div className="relative">
-          {/* Timeline line */}
           <div className="absolute left-4 md:left-6 top-0 bottom-0 w-0.5 bg-border" />
-
           <div className="space-y-6">
             {entries.map((entry, i) => {
               const isExpanded = expandedIndex === i;
               return (
                 <div key={i} className="relative pl-12 md:pl-16">
-                  {/* Dot */}
                   <div className="absolute left-2.5 md:left-4.5 top-6 w-3 h-3 rounded-full bg-primary border-2 border-background" />
-
                   <div
                     className="rounded-xl border border-border bg-card p-5 cursor-pointer hover:border-primary/30 transition-colors"
                     onClick={() => setExpandedIndex(isExpanded ? null : i)}
@@ -82,8 +78,6 @@ export default function ExperienceSection() {
                         className={`text-muted-foreground transition-transform mt-1 flex-shrink-0 ${isExpanded ? "rotate-180" : ""}`}
                       />
                     </div>
-
-                    {/* Tags */}
                     <div className="flex flex-wrap gap-2 mt-3">
                       {entry.tags.map((tag) => (
                         <span key={tag} className="px-2 py-0.5 rounded-full text-xs font-medium bg-secondary/15 text-secondary">
@@ -91,10 +85,8 @@ export default function ExperienceSection() {
                         </span>
                       ))}
                     </div>
-
-                    {/* Bullets */}
                     {isExpanded && (
-                      <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+                      <ul className="mt-4 space-y-2 text-sm text-muted-foreground text-left">
                         {entry.bulletKeys.map((bk) => (
                           <li key={bk} className="flex gap-2">
                             <span className="text-primary mt-1">•</span>

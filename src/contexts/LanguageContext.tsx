@@ -29,21 +29,16 @@ const translations: Record<string, Record<Lang, string>> = {
   // About
   "about.title": { en: "About Me", fr: "À propos" },
   "about.p1": {
-    en: "5+ years managing e-commerce operations and digital projects across multi-brand Shopify environments, Odoo ERP implementations, and B2B marketplace platforms.",
+    en: "5+ years of experience managing e-commerce operations and digital projects across multi-brand Shopify environments, Odoo ERP implementations, and B2B marketplace platforms.",
     fr: "Plus de 5 ans d'expérience dans la gestion d'opérations e-commerce et de projets digitaux : environnements Shopify multi-marques, implémentations Odoo ERP et plateformes marketplace B2B.",
   },
   "about.p2": {
     en: "I bring a rare combination: a technical background in front-end development and UX/UI, hands-on ops experience, and a structured analytical mindset built during years as an Air Traffic Controller.",
     fr: "J'apporte une combinaison rare : un bagage technique en développement front-end et UX/UI, une expérience concrète en opérations, et un esprit analytique structuré forgé durant mes années de contrôle aérien.",
   },
-  "about.p3": {
-    en: "I work well at the intersection of business needs and tech teams — translating requirements into actionable delivery, building SOPs, and improving processes that actually stick.",
-    fr: "Je m'épanouis à l'intersection des besoins métier et des équipes techniques — traduire les exigences en livrables concrets, construire des SOPs et améliorer les processus de manière durable.",
-  },
-  "about.p4": {
-    en: "Based in Belgium. Fluent in FR / EN / DE / NL. Available for remote roles or hybrid positions in Belgium.",
-    fr: "Basé en Belgique. Courant en FR / EN / DE / NL. Disponible pour des postes en remote ou hybrides en Belgique.",
-  },
+  "about.info1": { en: "📍 Based in Belgium", fr: "📍 Basé en Belgique" },
+  "about.info2": { en: "🌐 FR / EN / DE / NL / ES", fr: "🌐 FR / EN / DE / NL / ES" },
+  "about.info3": { en: "💼 Open to remote or hybrid positions in Belgium", fr: "💼 Disponible en remote ou hybride en Belgique" },
   "about.badge1": { en: "Shopify Multi-Brand Expert", fr: "Expert Shopify Multi-Marques" },
   "about.badge2": { en: "Odoo ERP Implementation", fr: "Implémentation Odoo ERP" },
   "about.badge3": { en: "AI-Augmented Workflows", fr: "Workflows Augmentés par l'IA" },
@@ -51,16 +46,14 @@ const translations: Record<string, Record<Lang, string>> = {
   // Skills
   "skills.title": { en: "Tech Stack & Tools", fr: "Stack Technique & Outils" },
   "skills.ecommerce": { en: "E-Commerce & Platforms", fr: "E-Commerce & Plateformes" },
+  "skills.seo": { en: "SEO, GEO & Search Visibility", fr: "SEO, GEO & Visibilité" },
   "skills.ai": { en: "AI Tools & Integrations", fr: "Outils IA & Intégrations" },
   "skills.project": { en: "Project & Ops Management", fr: "Gestion de Projet & Ops" },
   "skills.frontend": { en: "Front-End & UX/UI", fr: "Front-End & UX/UI" },
-  "skills.data": { en: "Data & Analytics", fr: "Data & Analytics" },
   "skills.languages": { en: "Languages", fr: "Langues" },
 
   // Experience
   "exp.title": { en: "Experience", fr: "Expérience" },
-
-  // Experience entries
   "exp.1.role": { en: "Operations Specialist & Website Operations Lead", fr: "Spécialiste Opérations & Responsable Opérations Web" },
   "exp.1.company": { en: "Trustup — B2B Construction Marketplace", fr: "Trustup — Marketplace B2B Construction" },
   "exp.1.period": { en: "March 2022 → Present", fr: "Mars 2022 → Aujourd'hui" },
@@ -122,7 +115,10 @@ const translations: Record<string, Record<Lang, string>> = {
   "projects.comingSoon": { en: "+ More projects coming soon", fr: "+ D'autres projets à venir" },
 
   "proj.1.name": { en: "HElo Cosmetics", fr: "HElo Cosmetics" },
-  "proj.1.desc": { en: "Multi-brand Shopify platform — SEO optimization, UX improvements, app integrations and performance monitoring.", fr: "Plateforme Shopify multi-marques — optimisation SEO, améliorations UX, intégrations d'apps et suivi de performance." },
+  "proj.1.desc": {
+    en: "Multi-brand e-commerce platform built on Webflow — SEO optimization, UX improvements, and performance monitoring.",
+    fr: "Plateforme e-commerce multi-marques développée sur Webflow — optimisation SEO, amélioration UX et suivi des performances.",
+  },
   "proj.2.name": { en: "Gemology Belgium", fr: "Gemology Belgium" },
   "proj.2.desc": { en: "Shopify configuration, module integration and e-commerce operations management.", fr: "Configuration Shopify, intégration de modules et gestion des opérations e-commerce." },
   "proj.3.name": { en: "Origine Spa", fr: "Origine Spa" },
@@ -148,7 +144,8 @@ const translations: Record<string, Record<Lang, string>> = {
   "contact.subject": { en: "Subject", fr: "Sujet" },
   "contact.message": { en: "Message", fr: "Message" },
   "contact.send": { en: "Send Message", fr: "Envoyer" },
-  "contact.success": { en: "Message sent! I'll get back to you soon.", fr: "Message envoyé ! Je vous répondrai rapidement." },
+  "contact.success": { en: "✅ Message sent! I'll get back to you shortly.", fr: "✅ Message envoyé ! Je vous réponds rapidement." },
+  "contact.error": { en: "❌ Something went wrong. Please try again or email me directly.", fr: "❌ Une erreur est survenue. Réessayez ou contactez-moi directement." },
   "contact.job": { en: "Job opportunity", fr: "Opportunité d'emploi" },
   "contact.freelance": { en: "Freelance project", fr: "Projet freelance" },
   "contact.other": { en: "Other", fr: "Autre" },
