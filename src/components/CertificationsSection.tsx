@@ -14,11 +14,11 @@ export default function CertificationsSection() {
 
   return (
     <section id="certifications" className="py-24 px-4">
-      <div className="max-w-4xl mx-auto section-fade-in">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gradient">{t("cert.title")}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="max-w-4xl mx-auto section-fade-in text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-gradient tracking-wider uppercase">{t("cert.title")}</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-center">
           {certs.map((cert, i) => (
-            <div key={i} className="flex items-start gap-4 p-5 rounded-xl border border-border bg-card">
+            <div key={i} className="flex items-start gap-4 p-5 rounded-xl border border-border bg-card text-left">
               <GraduationCap size={20} className="text-primary mt-0.5 flex-shrink-0" />
               <div>
                 <span className="text-xs font-semibold text-primary">{cert.year}</span>

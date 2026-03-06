@@ -2,7 +2,8 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 interface Skill {
   name: string;
-  level: number; // out of 5
+  level: number;
+  tooltip?: { en: string; fr: string };
 }
 
 interface SkillGroup {
@@ -15,23 +16,28 @@ const skillGroups: SkillGroup[] = [
     titleKey: "skills.ecommerce",
     skills: [
       { name: "Shopify", level: 5 },
-      { name: "Shopify Plus", level: 4 },
+      { name: "Shopify Plus", level: 3 },
       { name: "Odoo ERP", level: 4 },
-      { name: "Webflow", level: 3 },
-      { name: "Framer", level: 3 },
+      { name: "Webflow / Framer (No-Code)", level: 3 },
       { name: "Lovable", level: 4 },
-      { name: "WooCommerce", level: 2 },
     ],
   },
   {
-    titleKey: "skills.ai",
+    titleKey: "skills.seo",
     skills: [
-      { name: "Lovable (AI)", level: 4 },
-      { name: "Claude API", level: 3 },
       { name: "Google Search Console", level: 5 },
       { name: "Google Merchant Center", level: 4 },
-      { name: "Make (Integromat)", level: 3 },
-      { name: "Zapier", level: 3 },
+      { name: "Google Analytics 4", level: 4 },
+      { name: "SEO (On-page, Technical)", level: 4 },
+      {
+        name: "GEO — Generative Engine Optimization",
+        level: 3,
+        tooltip: {
+          en: "Optimization for AI search engines (ChatGPT, Perplexity, Gemini)",
+          fr: "Référencement sur les moteurs de recherche IA",
+        },
+      },
+      { name: "Hotjar", level: 3 },
     ],
   },
   {
@@ -47,7 +53,7 @@ const skillGroups: SkillGroup[] = [
   {
     titleKey: "skills.frontend",
     skills: [
-      { name: "HTML/CSS", level: 4 },
+      { name: "HTML/CSS", level: 5 },
       { name: "JavaScript", level: 3 },
       { name: "React", level: 3 },
       { name: "Figma", level: 4 },
@@ -56,12 +62,12 @@ const skillGroups: SkillGroup[] = [
     ],
   },
   {
-    titleKey: "skills.data",
+    titleKey: "skills.ai",
     skills: [
-      { name: "Google Analytics 4", level: 4 },
-      { name: "Power BI", level: 3 },
-      { name: "Hotjar", level: 3 },
-      { name: "Qlikview", level: 3 },
+      { name: "Lovable (AI)", level: 4 },
+      { name: "Claude API", level: 3 },
+      { name: "Make (Integromat)", level: 3 },
+      { name: "Zapier", level: 3 },
     ],
   },
   {
@@ -71,6 +77,7 @@ const skillGroups: SkillGroup[] = [
       { name: "🇬🇧 English — Professional", level: 4 },
       { name: "🇩🇪 German — Intermediate", level: 3 },
       { name: "🇳🇱 Dutch — Basic", level: 2 },
+      { name: "🇪🇸 Spanish — Basic", level: 1 },
     ],
   },
 ];
@@ -89,21 +96,28 @@ function Dots({ level }: { level: number }) {
 }
 
 export default function SkillsSection() {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
 
   return (
-    <section id="skills" className="py-24 px-4 bg-card/50">
+    <section id="skills" className="py-24 px-4">
       <div className="max-w-6xl mx-auto section-fade-in">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gradient">{t("skills.title")}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gradient tracking-wider uppercase">{t("skills.title")}</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
           {skillGroups.map((group) => (
             <div key={group.titleKey} className="rounded-xl border border-border bg-card p-6">
               <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">{t(group.titleKey)}</h3>
               <div className="space-y-3">
                 {group.skills.map((skill) => (
-                  <div key={skill.name} className="flex items-center justify-between">
-                    <span className="text-sm text-foreground">{skill.name}</span>
-                    <Dots level={skill.level} />
+                  <div key={skill.name}>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-foreground">{skill.name}</span>
+                      <Dots level={skill.level} />
+                    </div>
+                    {skill.tooltip && (
+                      <p className="text-xs text-muted-foreground mt-0.5 ml-1 italic">
+                        {lang === "fr" ? skill.tooltip.fr : skill.tooltip.en}
+                      </p>
+                    )}
                   </div>
                 ))}
               </div>
