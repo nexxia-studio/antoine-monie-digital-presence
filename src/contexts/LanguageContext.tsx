@@ -29,16 +29,16 @@ const translations: Record<string, Record<Lang, string>> = {
   // About
   "about.title": { en: "About Me", fr: "À propos" },
   "about.p1": {
-    en: "5+ years of experience managing e-commerce operations and digital projects across multi-brand Shopify environments, Odoo ERP implementations, and B2B marketplace platforms.",
-    fr: "Plus de 5 ans d'expérience dans la gestion d'opérations e-commerce et de projets digitaux : environnements Shopify multi-marques, implémentations Odoo ERP et plateformes marketplace B2B.",
+    en: "5+ years of experience managing e-commerce operations and digital projects across multi-brand Shopify environments, Odoo ERP implementations, and B2C e-commerce platforms.",
+    fr: "Plus de 5 ans d'expérience dans la gestion d'opérations e-commerce et de projets digitaux : environnements Shopify multi-marques, implémentations Odoo ERP et plateformes e-commerce B2C.",
   },
   "about.p2": {
     en: "I bring a rare combination: a technical background in front-end development and UX/UI, hands-on ops experience, and a structured analytical mindset built during years as an Air Traffic Controller.",
     fr: "J'apporte une combinaison rare : un bagage technique en développement front-end et UX/UI, une expérience concrète en opérations, et un esprit analytique structuré forgé durant mes années de contrôle aérien.",
   },
-  "about.info1": { en: "📍 Based in Belgium", fr: "📍 Basé en Belgique" },
-  "about.info2": { en: "🌐 FR / EN / DE / NL / ES", fr: "🌐 FR / EN / DE / NL / ES" },
-  "about.info3": { en: "💼 Open to remote or hybrid positions in Belgium", fr: "💼 Disponible en remote ou hybride en Belgique" },
+  "about.info1": { en: "Based in Belgium", fr: "Basé en Belgique" },
+  "about.info2": { en: "FR / EN / DE / NL / ES", fr: "FR / EN / DE / NL / ES" },
+  "about.info3": { en: "Open to remote or hybrid positions in Belgium", fr: "Disponible en remote ou hybride en Belgique" },
   "about.badge1": { en: "Shopify Multi-Brand Expert", fr: "Expert Shopify Multi-Marques" },
   "about.badge2": { en: "Odoo ERP Implementation", fr: "Implémentation Odoo ERP" },
   "about.badge3": { en: "AI-Augmented Workflows", fr: "Workflows Augmentés par l'IA" },
@@ -55,10 +55,10 @@ const translations: Record<string, Record<Lang, string>> = {
   // Experience
   "exp.title": { en: "Experience", fr: "Expérience" },
   "exp.1.role": { en: "Operations Specialist & Website Operations Lead", fr: "Spécialiste Opérations & Responsable Opérations Web" },
-  "exp.1.company": { en: "Trustup — B2B Construction Marketplace", fr: "Trustup — Marketplace B2B Construction" },
+  "exp.1.company": { en: "Trustup — B2C Construction Marketplace", fr: "Trustup — Marketplace B2C Construction" },
   "exp.1.period": { en: "March 2022 → Present", fr: "Mars 2022 → Aujourd'hui" },
   "exp.1.location": { en: "Liège, Belgium", fr: "Liège, Belgique" },
-  "exp.1.b1": { en: "Managed post-production website modifications for construction professionals across a B2B marketplace platform", fr: "Gestion des modifications post-production de sites web pour des professionnels de la construction sur une plateforme marketplace B2B" },
+  "exp.1.b1": { en: "Managed post-production website modifications for construction professionals on a B2C marketplace connecting tradespeople with private clients", fr: "Gestion des modifications post-production de sites web pour des professionnels du bâtiment sur une marketplace B2C mettant en relation artisans et particuliers" },
   "exp.1.b2": { en: "Contributed to operational process definition, improvement and digitalization (contract digitalization, ticketing systems via Monday)", fr: "Contribution à la définition, amélioration et digitalisation des processus opérationnels (digitalisation des contrats, ticketing via Monday)" },
   "exp.1.b3": { en: "Built and deployed client intake forms using Lovable and structured AI prompting workflows", fr: "Création et déploiement de formulaires d'intégration client via Lovable et workflows IA structurés" },
   "exp.1.b4": { en: "Coordinated cross-functional alignment between Marketing, Tech, and Support teams", fr: "Coordination transversale entre les équipes Marketing, Tech et Support" },
@@ -126,7 +126,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "proj.4.name": { en: "Ouate Paris", fr: "Ouate Paris" },
   "proj.4.desc": { en: "Shopify platform optimization, SEO and conversion improvements.", fr: "Optimisation de la plateforme Shopify, améliorations SEO et conversion." },
   "proj.5.name": { en: "Trustup", fr: "Trustup" },
-  "proj.5.desc": { en: "B2B marketplace operations — website management, process digitalization and cross-team coordination.", fr: "Opérations marketplace B2B — gestion de site, digitalisation des processus et coordination inter-équipes." },
+  "proj.5.desc": { en: "B2C marketplace connecting tradespeople with private clients — website management, process digitalization and cross-team coordination.", fr: "Marketplace B2C mettant en relation des professionnels du bâtiment avec des particuliers — gestion de site, digitalisation des processus et coordination inter-équipes." },
   "proj.6.name": { en: "Odoo ERP Implementation", fr: "Implémentation Odoo ERP" },
   "proj.6.desc": { en: "Full Odoo ERP setup: CRM, inventory management and invoicing modules. User training and process documentation.", fr: "Configuration complète Odoo ERP : CRM, gestion des stocks et facturation. Formation utilisateurs et documentation des processus." },
 

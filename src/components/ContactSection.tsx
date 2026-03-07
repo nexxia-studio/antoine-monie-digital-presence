@@ -14,13 +14,34 @@ export default function ContactSection() {
     setError(false);
 
     const form = e.currentTarget;
-    const formData = new FormData(form);
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      subject: (form.elements.namedItem("subject") as HTMLSelectElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+      _gotcha: (form.elements.namedItem("_gotcha") as HTMLInputElement).value,
+    };
+
+    // Honeypot check
+    if (data._gotcha) {
+      setSubmitted(true);
+      setLoading(false);
+      return;
+    }
 
     try {
       const res = await fetch("https://formspree.io/f/mzdjbebn", {
         method: "POST",
-        body: formData,
-        headers: { Accept: "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          subject: data.subject,
+          message: data.message,
+        }),
       });
       if (res.ok) {
         setSubmitted(true);
@@ -71,10 +92,9 @@ export default function ContactSection() {
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5 w-[90%] mx-auto lg:w-full">
               {/* Honeypot */}
               <input type="text" name="_gotcha" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
-              <input type="hidden" name="_replyto" />
               <div>
                 <label className="text-sm font-medium text-foreground mb-1.5 block">{t("contact.name")}</label>
                 <input name="name" type="text" required className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50" />
