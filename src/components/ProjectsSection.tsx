@@ -1,5 +1,10 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ExternalLink, Plus } from "lucide-react";
+import coverHelo from "@/assets/cover-helo.webp";
+import logoGemology from "@/assets/logo-gemology.webp";
+import logoOrigine from "@/assets/logo-origine.webp";
+import logoOuate from "@/assets/logo-ouate.webp";
+import coverTrustup from "@/assets/cover-trustup.jpg";
 
 interface Project {
   nameKey: string;
@@ -7,16 +12,16 @@ interface Project {
   tags: string[];
   url?: string;
   isCaseStudy?: boolean;
-  color: string;
+  image?: string;
 }
 
 const projects: Project[] = [
-  { nameKey: "proj.1.name", descKey: "proj.1.desc", tags: ["Webflow", "SEO", "UX", "EcommerceOps"], url: "https://helocosmetics.com", color: "from-primary/20 to-secondary/20" },
-  { nameKey: "proj.2.name", descKey: "proj.2.desc", tags: ["Shopify", "Configuration", "ProductManagement"], url: "https://gemology.be", color: "from-secondary/20 to-primary/20" },
-  { nameKey: "proj.3.name", descKey: "proj.3.desc", tags: ["Shopify", "ProjectManagement", "UX"], url: "https://origine-spa.be", color: "from-primary/20 to-secondary/10" },
-  { nameKey: "proj.4.name", descKey: "proj.4.desc", tags: ["Shopify", "CRO", "SEO"], url: "https://ouate-paris.be", color: "from-secondary/10 to-primary/20" },
-  { nameKey: "proj.5.name", descKey: "proj.5.desc", tags: ["Marketplace", "OpsManagement", "B2B", "ProcessImprovement"], url: "https://trustup.be", color: "from-primary/15 to-secondary/15" },
-  { nameKey: "proj.6.name", descKey: "proj.6.desc", tags: ["Odoo", "ERP", "BusinessAnalysis", "Implementation"], isCaseStudy: true, color: "from-secondary/20 to-primary/10" },
+  { nameKey: "proj.1.name", descKey: "proj.1.desc", tags: ["Webflow", "SEO", "UX", "EcommerceOps"], url: "https://helocosmetics.com", image: coverHelo },
+  { nameKey: "proj.2.name", descKey: "proj.2.desc", tags: ["Shopify", "Configuration", "ProductManagement"], url: "https://gemology.be", image: logoGemology },
+  { nameKey: "proj.3.name", descKey: "proj.3.desc", tags: ["Shopify", "ProjectManagement", "UX"], url: "https://origine-spa.be", image: logoOrigine },
+  { nameKey: "proj.4.name", descKey: "proj.4.desc", tags: ["Shopify", "CRO", "SEO"], url: "https://ouate-paris.be", image: logoOuate },
+  { nameKey: "proj.5.name", descKey: "proj.5.desc", tags: ["Marketplace", "OpsManagement", "B2C", "ProcessImprovement"], url: "https://trustup.be", image: coverTrustup },
+  { nameKey: "proj.6.name", descKey: "proj.6.desc", tags: ["Odoo", "ERP", "BusinessAnalysis", "Implementation"], isCaseStudy: true, image: coverHelo },
 ];
 
 export default function ProjectsSection() {
@@ -29,8 +34,15 @@ export default function ProjectsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
           {projects.map((proj) => (
             <div key={proj.nameKey} className="rounded-xl border border-border bg-card overflow-hidden hover:border-primary/30 transition-colors group">
-              <div className={`h-32 bg-gradient-to-br ${proj.color} flex items-center justify-center`}>
-                <span className="text-2xl font-bold text-foreground/40">{t(proj.nameKey).charAt(0)}</span>
+              <div className="aspect-[3/2] overflow-hidden bg-muted">
+                {proj.image && (
+                  <img
+                    src={proj.image}
+                    alt={t(proj.nameKey)}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                )}
               </div>
               <div className="p-5">
                 <div className="flex items-center gap-2">

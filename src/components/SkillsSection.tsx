@@ -27,7 +27,6 @@ const skillGroups: SkillGroup[] = [
     skills: [
       { name: "Google Search Console", level: 5 },
       { name: "Google Merchant Center", level: 4 },
-      { name: "Google Analytics 4", level: 4 },
       { name: "SEO (On-page, Technical)", level: 4 },
       {
         name: "GEO — Generative Engine Optimization",
@@ -56,18 +55,18 @@ const skillGroups: SkillGroup[] = [
       { name: "HTML/CSS", level: 5 },
       { name: "JavaScript", level: 3 },
       { name: "React", level: 3 },
-      { name: "Figma", level: 4 },
+      { name: "Figma", level: 3 },
       { name: "UX Audit", level: 4 },
-      { name: "SEO/CRO", level: 4 },
     ],
   },
   {
     titleKey: "skills.ai",
     skills: [
-      { name: "Lovable (AI)", level: 4 },
-      { name: "Claude API", level: 3 },
-      { name: "Make (Integromat)", level: 3 },
-      { name: "Zapier", level: 3 },
+      { name: "ChatGPT / Claude", level: 5, tooltip: { en: "Prompt Engineering", fr: "Prompt Engineering" } },
+      { name: "Midjourney / Firefly", level: 4, tooltip: { en: "AI Visual Generation", fr: "Génération de visuels IA" } },
+      { name: "Runway / Kling", level: 3, tooltip: { en: "AI Video & UGC", fr: "Vidéo IA & UGC" } },
+      { name: "Make (Integromat)", level: 3, tooltip: { en: "Workflow Automation", fr: "Automatisation de flux" } },
+      { name: "Lovable / Cursor", level: 4, tooltip: { en: "Vibe Coding & Internal Tools", fr: "Vibe Coding & outils internes" } },
     ],
   },
   {

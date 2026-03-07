@@ -109,10 +109,10 @@
     animation: float-particle linear infinite;
   }
   .dark .particle {
-    background: hsl(190 100% 50% / 0.3);
+    background: hsl(190 100% 50% / 0.5);
   }
   :not(.dark) .particle {
-    background: hsl(215 20% 60% / 0.25);
+    background: hsl(215 20% 45% / 0.4);
   }
   .text-gradient {
     @apply bg-clip-text text-transparent;
@@ -136,15 +136,15 @@
     pointer-events: none;
   }
   .dark .abstract-bg {
-    background: radial-gradient(ellipse at 20% 50%, hsl(210 60% 12%) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, hsl(270 50% 10%) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 80%, hsl(200 50% 10%) 0%, transparent 50%),
+    background: radial-gradient(ellipse at 20% 50%, hsl(210 70% 16%) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, hsl(270 60% 14%) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, hsl(200 60% 14%) 0%, transparent 50%),
                 hsl(230 25% 7%);
   }
   :root:not(.dark) .abstract-bg {
-    background: radial-gradient(ellipse at 20% 50%, hsl(220 60% 96%) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, hsl(280 40% 97%) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 80%, hsl(170 40% 95%) 0%, transparent 50%),
+    background: radial-gradient(ellipse at 20% 50%, hsl(220 70% 93%) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, hsl(280 50% 94%) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, hsl(170 50% 92%) 0%, transparent 50%),
                 hsl(228 20% 97%);
   }
 
@@ -176,12 +176,12 @@
     left: 40%;
     animation-delay: -16s;
   }
-  .dark .blob-1 { background: hsl(190 100% 50% / 0.08); }
-  .dark .blob-2 { background: hsl(245 100% 69% / 0.08); }
-  .dark .blob-3 { background: hsl(190 100% 50% / 0.06); }
-  :root:not(.dark) .blob-1 { background: hsl(190 60% 70% / 0.12); }
-  :root:not(.dark) .blob-2 { background: hsl(280 50% 80% / 0.12); }
-  :root:not(.dark) .blob-3 { background: hsl(190 60% 70% / 0.08); }
+  .dark .blob-1 { background: hsl(190 100% 50% / 0.15); }
+  .dark .blob-2 { background: hsl(245 100% 69% / 0.15); }
+  .dark .blob-3 { background: hsl(190 100% 50% / 0.12); }
+  :root:not(.dark) .blob-1 { background: hsl(190 60% 70% / 0.18); }
+  :root:not(.dark) .blob-2 { background: hsl(280 50% 80% / 0.18); }
+  :root:not(.dark) .blob-3 { background: hsl(190 60% 70% / 0.14); }
 }
 
 @keyframes blob-float {
