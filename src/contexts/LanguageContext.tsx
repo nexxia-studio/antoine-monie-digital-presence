@@ -16,6 +16,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "nav.projects": { en: "Projects", fr: "Projets" },
   "nav.certifications": { en: "Certifications", fr: "Certifications" },
   "nav.contact": { en: "Contact", fr: "Contact" },
+  "nav.faq": { en: "FAQ", fr: "FAQ" },
 
   // Hero
   "hero.tagline": {
@@ -132,6 +133,9 @@ const translations: Record<string, Record<Lang, string>> = {
 
   // Certifications
   "cert.title": { en: "Certifications & Training", fr: "Certifications & Formations" },
+
+  // FAQ
+  "faq.title": { en: "Frequently Asked Questions", fr: "Questions Fréquentes" },
 
   // Contact
   "contact.title": { en: "Let's Connect", fr: "Travaillons Ensemble" },

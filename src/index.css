@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@700;900&family=Rajdhani:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@700;900&family=Rajdhani:wght@500;600;700&family=Cormorant+Garamond:wght@300;400;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,8 +10,6 @@
     --foreground: 228 30% 15%;
     --card: 0 0% 100%;
     --card-foreground: 228 30% 15%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 228 30% 15%;
     --primary: 190 100% 50%;
     --primary-foreground: 228 50% 8%;
     --secondary: 245 100% 69%;
@@ -67,6 +65,38 @@
     --sidebar-border: 230 15% 22%;
     --sidebar-ring: 190 100% 50%;
   }
+
+  .luxury {
+    --background: 30 18% 94%;
+    --foreground: 25 15% 9%;
+    --card: 35 30% 98%;
+    --card-foreground: 25 15% 9%;
+    --popover: 35 30% 98%;
+    --popover-foreground: 25 15% 9%;
+    --primary: 30 25% 44%;
+    --primary-foreground: 35 30% 98%;
+    --secondary: 30 18% 89%;
+    --secondary-foreground: 20 10% 20%;
+    --muted: 30 14% 90%;
+    --muted-foreground: 20 10% 40%;
+    --accent: 32 30% 64%;
+    --accent-foreground: 25 15% 9%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 14% 80%;
+    --input: 30 14% 80%;
+    --ring: 30 25% 44%;
+    --radius: 0.75rem;
+
+    --sidebar-background: 30 18% 94%;
+    --sidebar-foreground: 25 15% 9%;
+    --sidebar-primary: 30 25% 44%;
+    --sidebar-primary-foreground: 35 30% 98%;
+    --sidebar-accent: 30 14% 90%;
+    --sidebar-accent-foreground: 25 15% 9%;
+    --sidebar-border: 30 14% 80%;
+    --sidebar-ring: 30 25% 44%;
+  }
 }
 
 @layer base {
@@ -80,11 +110,23 @@
   html {
     scroll-behavior: smooth;
   }
-  h1, h2 {
+  /* Tech mode fonts */
+  .dark h1, .dark h2 {
     font-family: 'Orbitron', sans-serif;
   }
-  h3 {
+  .dark h3 {
     font-family: 'Rajdhani', sans-serif;
+  }
+  /* Luxury mode fonts */
+  .luxury h1, .luxury h2, .luxury h3 {
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.04em;
+  }
+  .luxury h2, .luxury h3 {
+    font-weight: 300;
+  }
+  .luxury h1 {
+    font-weight: 700;
   }
 }
 
@@ -101,6 +143,9 @@
   .glow-border {
     box-shadow: 0 0 20px hsl(190 100% 50% / 0.3), 0 0 40px hsl(190 100% 50% / 0.1);
   }
+  .luxury .glow-border {
+    box-shadow: 0 0 20px hsl(30 25% 44% / 0.25), 0 0 40px hsl(30 25% 44% / 0.1);
+  }
   .particle {
     position: absolute;
     width: 2px;
@@ -109,20 +154,31 @@
     animation: float-particle linear infinite;
   }
   .dark .particle {
-    background: hsl(190 100% 50% / 0.5);
+    background: hsl(190 100% 50% / 0.6);
   }
-  :not(.dark) .particle {
-    background: hsl(215 20% 45% / 0.4);
+  .luxury .particle {
+    background: hsl(30 25% 44% / 0.35);
   }
   .text-gradient {
     @apply bg-clip-text text-transparent;
+  }
+  .dark .text-gradient {
     background-image: linear-gradient(135deg, hsl(190 100% 50%), hsl(245 100% 69%));
+  }
+  .luxury .text-gradient {
+    background-image: linear-gradient(135deg, hsl(30 25% 44%), hsl(32 30% 64%));
   }
   .font-heading {
     font-family: 'Orbitron', sans-serif;
   }
+  .luxury .font-heading {
+    font-family: 'Cormorant Garamond', serif;
+  }
   .font-subheading {
     font-family: 'Rajdhani', sans-serif;
+  }
+  .luxury .font-subheading {
+    font-family: 'Cormorant Garamond', serif;
   }
 
   /* Abstract gradient backgrounds */
@@ -141,11 +197,11 @@
                 radial-gradient(ellipse at 50% 80%, hsl(200 60% 14%) 0%, transparent 50%),
                 hsl(230 25% 7%);
   }
-  :root:not(.dark) .abstract-bg {
-    background: radial-gradient(ellipse at 20% 50%, hsl(220 70% 93%) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, hsl(280 50% 94%) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 80%, hsl(170 50% 92%) 0%, transparent 50%),
-                hsl(228 20% 97%);
+  .luxury .abstract-bg {
+    background: radial-gradient(ellipse at 20% 50%, hsl(30 30% 90%) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, hsl(25 20% 88%) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, hsl(35 25% 91%) 0%, transparent 50%),
+                hsl(30 18% 94%);
   }
 
   /* Animated blobs */
@@ -176,12 +232,12 @@
     left: 40%;
     animation-delay: -16s;
   }
-  .dark .blob-1 { background: hsl(190 100% 50% / 0.15); }
-  .dark .blob-2 { background: hsl(245 100% 69% / 0.15); }
-  .dark .blob-3 { background: hsl(190 100% 50% / 0.12); }
-  :root:not(.dark) .blob-1 { background: hsl(190 60% 70% / 0.18); }
-  :root:not(.dark) .blob-2 { background: hsl(280 50% 80% / 0.18); }
-  :root:not(.dark) .blob-3 { background: hsl(190 60% 70% / 0.14); }
+  .dark .blob-1 { background: hsl(190 100% 50% / 0.18); }
+  .dark .blob-2 { background: hsl(245 100% 69% / 0.18); }
+  .dark .blob-3 { background: hsl(190 100% 50% / 0.14); }
+  .luxury .blob-1 { background: hsl(32 30% 64% / 0.15); }
+  .luxury .blob-2 { background: hsl(30 25% 44% / 0.10); }
+  .luxury .blob-3 { background: hsl(30 14% 80% / 0.12); }
 }
 
 @keyframes blob-float {

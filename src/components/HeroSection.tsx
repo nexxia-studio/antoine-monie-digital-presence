@@ -1,19 +1,34 @@
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useTheme } from "@/contexts/ThemeContext";
 import { MapPin, Download, ArrowDown, ShoppingBag, Settings2, Globe } from "lucide-react";
 import photoUrl from "@/assets/antoine-photo.jpg";
 
-const subtitlesEN = [
+const subtitlesTechEN = [
   "E-Commerce Operations Manager",
   "Shopify Project Manager",
   "Business Analyst — Odoo & ERP",
   "Digital Transformation Specialist",
 ];
-const subtitlesFR = [
+const subtitlesTechFR = [
   "Ops Manager E-Commerce",
   "Chef de Projet Shopify",
   "Business Analyst — Odoo & ERP",
   "Spécialiste Transformation Digitale",
+];
+const subtitlesLuxuryEN = [
+  "E-Commerce Operations Manager",
+  "Beauty & Lifestyle Brand Specialist",
+  "Shopify Multi-Brand Expert",
+  "Digital Ops — Cosmetics & Fashion",
+  "Odoo ERP Implementation Lead",
+];
+const subtitlesLuxuryFR = [
+  "Ops Manager E-Commerce",
+  "Spécialiste Marques Beauty & Lifestyle",
+  "Expert Shopify Multi-Marques",
+  "Ops Digitales — Cosmétiques & Mode",
+  "Lead Implémentation Odoo ERP",
 ];
 
 const valueProps = [
@@ -24,7 +39,17 @@ const valueProps = [
 
 export default function HeroSection() {
   const { lang, t } = useLanguage();
-  const subtitles = lang === "fr" ? subtitlesFR : subtitlesEN;
+  const { theme } = useTheme();
+
+  const subtitles = theme === "luxury"
+    ? (lang === "fr" ? subtitlesLuxuryFR : subtitlesLuxuryEN)
+    : (lang === "fr" ? subtitlesTechFR : subtitlesTechEN);
+
+  const hookline = theme === "luxury"
+    ? (lang === "fr"
+      ? "Beauty · Cosmétiques · Mode — une expertise ops taillée pour les marques e-commerce premium."
+      : "Beauty · Cosmetics · Fashion — ops expertise tailored for premium e-commerce brands.")
+    : t("hero.hookline");
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
@@ -69,12 +94,12 @@ export default function HeroSection() {
     }
   }, [displayText, phase, currentIndex, subtitles]);
 
-  // Reset when language changes
+  // Reset when language or theme changes
   useEffect(() => {
     setDisplayText("");
     setPhase("typing");
     setCurrentIndex(0);
-  }, [lang]);
+  }, [lang, theme]);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
@@ -91,7 +116,7 @@ export default function HeroSection() {
             <span className="cursor-blink text-primary text-2xl">|</span>
           </div>
           <p className="text-sm md:text-base italic text-muted-foreground/75 max-w-xl mb-6 mx-auto lg:mx-0">
-            {t("hero.hookline")}
+            {hookline}
           </p>
           <p className="text-lg text-muted-foreground max-w-xl mb-8 mx-auto lg:mx-0">
             {t("hero.tagline")}

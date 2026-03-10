@@ -1,20 +1,18 @@
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Zap, Sparkles, Menu, X } from "lucide-react";
 
-const sections = ["about", "skills", "experience", "projects", "certifications", "contact"];
+const sections = ["about", "skills", "experience", "projects", "certifications", "faq", "contact"];
 
 function AMLogoSVG() {
   return (
     <svg viewBox="0 0 80 32" className="h-8 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* A - slanted with rectangular negative space */}
       <path
         d="M2 30L14 2H20L32 30H26L23.5 23H10.5L8 30H2ZM12.5 18H21.5L17 6L12.5 18Z"
         fill="currentColor"
         className="text-primary"
       />
-      {/* M - with rounded outer strokes */}
       <path
         d="M36 30V4C36 2.9 36.9 2 38 2H40L50 18L60 2H62C63.1 2 64 2.9 64 4V30H58V12L50 26L42 12V30H36Z"
         fill="currentColor"
@@ -58,12 +56,10 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        {/* Logo */}
         <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex-shrink-0">
           <AMLogoSVG />
         </button>
 
-        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-6">
           {sections.map((s) => (
             <button
@@ -76,7 +72,6 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Right controls */}
         <div className="flex items-center gap-3">
           <div className="flex items-center rounded-full border border-border overflow-hidden text-xs font-medium">
             <button
@@ -93,8 +88,8 @@ export default function Navbar() {
             </button>
           </div>
 
-          <button onClick={toggleTheme} className="p-2 rounded-lg hover:bg-muted transition-colors text-muted-foreground hover:text-foreground">
-            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          <button onClick={toggleTheme} className="p-2 rounded-lg hover:bg-muted transition-colors text-muted-foreground hover:text-foreground" title={theme === "tech" ? "Switch to Luxury" : "Switch to Tech"}>
+            {theme === "tech" ? <Sparkles size={18} /> : <Zap size={18} />}
           </button>
 
           <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors text-muted-foreground">
