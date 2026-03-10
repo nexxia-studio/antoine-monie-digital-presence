@@ -56,7 +56,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "exp.title": { en: "Experience", fr: "Expérience" },
   "exp.1.role": { en: "Operations Specialist & Website Operations Lead", fr: "Spécialiste Opérations & Responsable Opérations Web" },
   "exp.1.company": { en: "Trustup — B2C Construction Marketplace", fr: "Trustup — Marketplace B2C Construction" },
-  "exp.1.period": { en: "March 2022 → Present", fr: "Mars 2022 → Aujourd'hui" },
+  "exp.1.period": { en: "July 2024 → Present", fr: "Juillet 2024 → Aujourd'hui" },
   "exp.1.location": { en: "Liège, Belgium", fr: "Liège, Belgique" },
   "exp.1.b1": { en: "Managed post-production website modifications for construction professionals on a B2C marketplace connecting tradespeople with private clients", fr: "Gestion des modifications post-production de sites web pour des professionnels du bâtiment sur une marketplace B2C mettant en relation artisans et particuliers" },
   "exp.1.b2": { en: "Contributed to operational process definition, improvement and digitalization (contract digitalization, ticketing systems via Monday)", fr: "Contribution à la définition, amélioration et digitalisation des processus opérationnels (digitalisation des contrats, ticketing via Monday)" },
