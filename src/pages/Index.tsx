@@ -1,5 +1,6 @@
 import { useScrollFade } from "@/hooks/useScrollFade";
 import Navbar from "@/components/Navbar";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
@@ -26,6 +27,7 @@ export default function Index() {
         <Particles />
       </div>
       <div className="relative z-10">
+        <ScrollProgressBar />
         <Navbar />
         <HeroSection />
         <AboutSection />

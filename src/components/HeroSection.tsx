@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { MapPin, Download, ArrowDown } from "lucide-react";
+import { MapPin, Download, ArrowDown, ShoppingBag, Settings2, Globe } from "lucide-react";
 import photoUrl from "@/assets/antoine-photo.jpg";
 
 const subtitlesEN = [
@@ -14,6 +14,12 @@ const subtitlesFR = [
   "Chef de Projet Shopify",
   "Business Analyst — Odoo & ERP",
   "Spécialiste Transformation Digitale",
+];
+
+const valueProps = [
+  { icon: ShoppingBag, titleKey: "hero.val1.title", descKey: "hero.val1.desc" },
+  { icon: Settings2, titleKey: "hero.val2.title", descKey: "hero.val2.desc" },
+  { icon: Globe, titleKey: "hero.val3.title", descKey: "hero.val3.desc" },
 ];
 
 export default function HeroSection() {
@@ -78,12 +84,15 @@ export default function HeroSection() {
           <h1 className="text-5xl md:text-7xl font-black tracking-wider mb-4 text-foreground uppercase">
             Antoine <span className="text-gradient">Monie</span>
           </h1>
-          <div className="h-10 mb-6">
+          <div className="h-10 mb-4">
             <span className="text-xl md:text-2xl font-subheading font-semibold text-primary">
               {displayText}
             </span>
             <span className="cursor-blink text-primary text-2xl">|</span>
           </div>
+          <p className="text-sm md:text-base italic text-muted-foreground/75 max-w-xl mb-6 mx-auto lg:mx-0">
+            {t("hero.hookline")}
+          </p>
           <p className="text-lg text-muted-foreground max-w-xl mb-8 mx-auto lg:mx-0">
             {t("hero.tagline")}
           </p>
@@ -96,12 +105,12 @@ export default function HeroSection() {
               {t("hero.viewProjects")}
             </button>
             <a
-              href="/Antoine_Monie_CV_EN.pdf"
+              href="/Antoine_Monie_CV.pdf"
               download
               className="px-6 py-3 rounded-lg border border-border text-foreground font-semibold hover:bg-muted transition-colors flex items-center gap-2"
             >
               <Download size={18} />
-              {t("hero.downloadCV")}
+              Download CV
             </a>
           </div>
           <div className="flex items-center gap-2 text-muted-foreground justify-center lg:justify-start">
@@ -120,6 +129,19 @@ export default function HeroSection() {
               loading="lazy"
             />
           </div>
+        </div>
+      </div>
+
+      {/* Value proposition cards */}
+      <div className="absolute bottom-8 left-0 right-0 z-10 px-4">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+          {valueProps.map(({ icon: Icon, titleKey, descKey }) => (
+            <div key={titleKey} className="rounded-xl border border-border bg-card/80 backdrop-blur-sm p-4 text-center">
+              <Icon size={22} className="text-primary mx-auto mb-2" />
+              <h3 className="text-sm font-bold text-foreground mb-1">{t(titleKey)}</h3>
+              <p className="text-xs text-muted-foreground">{t(descKey)}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

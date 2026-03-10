@@ -37,7 +37,7 @@ const translations: Record<string, Record<Lang, string>> = {
     fr: "J'apporte une combinaison rare : un bagage technique en développement front-end et UX/UI, une expérience concrète en opérations, et un esprit analytique structuré forgé durant mes années de contrôle aérien.",
   },
   "about.info1": { en: "Based in Belgium", fr: "Basé en Belgique" },
-  "about.info2": { en: "FR / EN / DE / NL / ES", fr: "FR / EN / DE / NL / ES" },
+  "about.info2": { en: "FR — EN", fr: "FR — EN" },
   "about.info3": { en: "Open to remote or hybrid positions in Belgium", fr: "Disponible en remote ou hybride en Belgique" },
   "about.badge1": { en: "Shopify Multi-Brand Expert", fr: "Expert Shopify Multi-Marques" },
   "about.badge2": { en: "Odoo ERP Implementation", fr: "Implémentation Odoo ERP" },
@@ -56,7 +56,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "exp.title": { en: "Experience", fr: "Expérience" },
   "exp.1.role": { en: "Operations Specialist & Website Operations Lead", fr: "Spécialiste Opérations & Responsable Opérations Web" },
   "exp.1.company": { en: "Trustup — B2C Construction Marketplace", fr: "Trustup — Marketplace B2C Construction" },
-  "exp.1.period": { en: "March 2022 → Present", fr: "Mars 2022 → Aujourd'hui" },
+  "exp.1.period": { en: "July 2024 → Present", fr: "Juillet 2024 → Aujourd'hui" },
   "exp.1.location": { en: "Liège, Belgium", fr: "Liège, Belgique" },
   "exp.1.b1": { en: "Managed post-production website modifications for construction professionals on a B2C marketplace connecting tradespeople with private clients", fr: "Gestion des modifications post-production de sites web pour des professionnels du bâtiment sur une marketplace B2C mettant en relation artisans et particuliers" },
   "exp.1.b2": { en: "Contributed to operational process definition, improvement and digitalization (contract digitalization, ticketing systems via Monday)", fr: "Contribution à la définition, amélioration et digitalisation des processus opérationnels (digitalisation des contrats, ticketing via Monday)" },
@@ -144,11 +144,26 @@ const translations: Record<string, Record<Lang, string>> = {
   "contact.subject": { en: "Subject", fr: "Sujet" },
   "contact.message": { en: "Message", fr: "Message" },
   "contact.send": { en: "Send Message", fr: "Envoyer" },
-  "contact.success": { en: "✅ Message sent! I'll get back to you shortly.", fr: "✅ Message envoyé ! Je vous réponds rapidement." },
-  "contact.error": { en: "❌ Something went wrong. Please try again or email me directly.", fr: "❌ Une erreur est survenue. Réessayez ou contactez-moi directement." },
+  "contact.success": { en: "Message sent! I'll get back to you shortly.", fr: "Message envoyé ! Je vous réponds rapidement." },
+  "contact.error": { en: "Something went wrong. Please try again or email me directly.", fr: "Une erreur est survenue. Réessayez ou contactez-moi directement." },
   "contact.job": { en: "Job opportunity", fr: "Opportunité d'emploi" },
   "contact.freelance": { en: "Freelance project", fr: "Projet freelance" },
   "contact.other": { en: "Other", fr: "Autre" },
+
+  // Hero value props
+  "hero.hookline": {
+    en: "Ops · Tech · Product — the rare profile that understands the business, the tools, and the processes.",
+    fr: "Ops · Tech · Product — le profil rare qui comprend à la fois le métier, les outils et les process.",
+  },
+  "hero.val1.title": { en: "E-Commerce Ops", fr: "E-Commerce Ops" },
+  "hero.val1.desc": { en: "Shopify multi-brand, Odoo ERP, B2C platform management", fr: "Shopify multi-brand, Odoo ERP, gestion de plateformes B2C" },
+  "hero.val2.title": { en: "Process & Automation", fr: "Process & Automation" },
+  "hero.val2.desc": { en: "Workflows, internal tools, AI integrations", fr: "Workflows, outils internes, intégrations IA" },
+  "hero.val3.title": { en: "Multilingual & Remote", fr: "Multilingue & Remote" },
+  "hero.val3.desc": { en: "FR · EN · DE · NL — available remote or hybrid", fr: "FR · EN · DE · NL — disponible en remote ou hybride" },
+
+  // Projects overlay
+  "projects.viewProject": { en: "View project →", fr: "Voir le projet →" },
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
