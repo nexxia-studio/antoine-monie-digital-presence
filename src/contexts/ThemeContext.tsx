@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
-type Theme = "dark" | "light";
+type Theme = "tech" | "luxury";
 
 interface ThemeContextType {
   theme: Theme;
@@ -11,16 +11,23 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
-    const saved = localStorage.getItem("theme");
-    return (saved === "light" || saved === "dark") ? saved : "dark";
+    const saved = localStorage.getItem("theme-mode");
+    return (saved === "luxury" || saved === "tech") ? saved : "tech";
   });
 
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", theme === "dark");
-    localStorage.setItem("theme", theme);
+    const root = document.documentElement;
+    if (theme === "tech") {
+      root.classList.add("dark");
+      root.classList.remove("luxury");
+    } else {
+      root.classList.remove("dark");
+      root.classList.add("luxury");
+    }
+    localStorage.setItem("theme-mode", theme);
   }, [theme]);
 
-  const toggleTheme = () => setTheme(prev => prev === "dark" ? "light" : "dark");
+  const toggleTheme = () => setTheme(prev => prev === "tech" ? "luxury" : "tech");
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
