@@ -149,6 +149,21 @@ const translations: Record<string, Record<Lang, string>> = {
   "contact.job": { en: "Job opportunity", fr: "Opportunité d'emploi" },
   "contact.freelance": { en: "Freelance project", fr: "Projet freelance" },
   "contact.other": { en: "Other", fr: "Autre" },
+
+  // Hero value props
+  "hero.hookline": {
+    en: "Ops · Tech · Product — the rare profile that understands the business, the tools, and the processes.",
+    fr: "Ops · Tech · Product — le profil rare qui comprend à la fois le métier, les outils et les process.",
+  },
+  "hero.val1.title": { en: "E-Commerce Ops", fr: "E-Commerce Ops" },
+  "hero.val1.desc": { en: "Shopify multi-brand, Odoo ERP, B2C platform management", fr: "Shopify multi-brand, Odoo ERP, gestion de plateformes B2C" },
+  "hero.val2.title": { en: "Process & Automation", fr: "Process & Automation" },
+  "hero.val2.desc": { en: "Workflows, internal tools, AI integrations", fr: "Workflows, outils internes, intégrations IA" },
+  "hero.val3.title": { en: "Multilingual & Remote", fr: "Multilingue & Remote" },
+  "hero.val3.desc": { en: "FR · EN · DE · NL — available remote or hybrid", fr: "FR · EN · DE · NL — disponible en remote ou hybride" },
+
+  // Projects overlay
+  "projects.viewProject": { en: "View project →", fr: "Voir le projet →" },
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);

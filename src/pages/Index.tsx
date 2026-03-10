@@ -27,6 +27,7 @@ export default function Index() {
         <Particles />
       </div>
       <div className="relative z-10">
+        <ScrollProgressBar />
         <Navbar />
         <HeroSection />
         <AboutSection />

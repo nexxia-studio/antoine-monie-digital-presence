@@ -13,15 +13,16 @@ interface Project {
   url?: string;
   isCaseStudy?: boolean;
   image?: string;
+  imageContain?: boolean;
 }
 
 const projects: Project[] = [
-  { nameKey: "proj.1.name", descKey: "proj.1.desc", tags: ["Webflow", "SEO", "UX", "EcommerceOps"], url: "https://helocosmetics.com", image: coverHelo },
+  { nameKey: "proj.1.name", descKey: "proj.1.desc", tags: ["Webflow", "SEO", "UX", "EcommerceOps"], url: "https://helocosmetics.com", image: coverHelo, imageContain: true },
   { nameKey: "proj.2.name", descKey: "proj.2.desc", tags: ["Shopify", "Configuration", "ProductManagement"], url: "https://gemology.be", image: logoGemology },
   { nameKey: "proj.3.name", descKey: "proj.3.desc", tags: ["Shopify", "ProjectManagement", "UX"], url: "https://origine-spa.be", image: logoOrigine },
   { nameKey: "proj.4.name", descKey: "proj.4.desc", tags: ["Shopify", "CRO", "SEO"], url: "https://ouate-paris.be", image: logoOuate },
-  { nameKey: "proj.5.name", descKey: "proj.5.desc", tags: ["Marketplace", "OpsManagement", "B2C", "ProcessImprovement"], url: "https://trustup.be", image: coverTrustup },
-  { nameKey: "proj.6.name", descKey: "proj.6.desc", tags: ["Odoo", "ERP", "BusinessAnalysis", "Implementation"], isCaseStudy: true, image: coverHelo },
+  { nameKey: "proj.5.name", descKey: "proj.5.desc", tags: ["Marketplace", "OpsManagement", "B2C", "ProcessImprovement"], url: "https://trustup.be", image: coverTrustup, imageContain: true },
+  { nameKey: "proj.6.name", descKey: "proj.6.desc", tags: ["Odoo", "ERP", "BusinessAnalysis", "Implementation"], isCaseStudy: true, image: coverHelo, imageContain: true },
 ];
 
 export default function ProjectsSection() {
@@ -33,15 +34,28 @@ export default function ProjectsSection() {
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gradient tracking-wider uppercase">{t("projects.title")}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
           {projects.map((proj) => (
-            <div key={proj.nameKey} className="rounded-xl border border-border bg-card overflow-hidden hover:border-primary/30 transition-colors group">
-              <div className="aspect-[3/2] overflow-hidden bg-muted">
+            <div key={proj.nameKey} className="rounded-xl border border-border bg-card overflow-hidden group transition-all duration-300 hover:border-primary/30 hover:-translate-y-1 hover:shadow-[0_8px_30px_hsl(190_100%_50%/0.15)]">
+              <div className={`aspect-[3/2] overflow-hidden relative ${proj.imageContain ? "bg-white" : "bg-muted"}`}>
                 {proj.image && (
                   <img
                     src={proj.image}
                     alt={t(proj.nameKey)}
-                    className="w-full h-full object-cover"
+                    className={`w-full h-full ${proj.imageContain ? "object-contain" : "object-cover"}`}
                     loading="lazy"
                   />
+                )}
+                {/* Hover overlay */}
+                {proj.url && (
+                  <a
+                    href={proj.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute inset-0 bg-primary/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  >
+                    <span className="text-primary-foreground font-semibold text-sm flex items-center gap-1.5">
+                      {t("projects.viewProject")} <ExternalLink size={14} />
+                    </span>
+                  </a>
                 )}
               </div>
               <div className="p-5">
@@ -62,7 +76,7 @@ export default function ProjectsSection() {
                     href={proj.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-primary hover:underline"
+                    className="inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-primary hover:underline hover:text-primary/80 transition-colors hover:shadow-[0_1px_6px_hsl(190_100%_50%/0.3)]"
                   >
                     {t("projects.viewLive")} <ExternalLink size={14} />
                   </a>
