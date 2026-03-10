@@ -1,8 +1,10 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useTheme } from "@/contexts/ThemeContext";
 import { ShoppingCart, RefreshCw, Bot, MapPin, Globe, Briefcase } from "lucide-react";
 
 export default function AboutSection() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const { theme } = useTheme();
 
   const badges = [
     { icon: ShoppingCart, key: "about.badge1" },
@@ -16,13 +18,23 @@ export default function AboutSection() {
     { icon: Briefcase, key: "about.info3" },
   ];
 
+  const luxuryAbout = lang === "fr"
+    ? "Spécialiste des opérations e-commerce pour marques beauty et lifestyle, avec une expérience concrète sur des enseignes cosmétiques (Gemology, Origine, HElo Cosmetics) et mode (Ouate Le Touquet). Profil hybride ops/tech, capable de gérer une plateforme Shopify de A à Z, d'implémenter un ERP Odoo et d'optimiser la visibilité organique (SEO/GEO) d'une marque premium. Multilingue, remote-ready, sensible aux codes du secteur luxe et cosmétique."
+    : "E-commerce operations specialist for beauty and lifestyle brands, with hands-on experience managing cosmetics brands (Gemology, Origine, HElo Cosmetics) and fashion (Ouate Le Touquet). A hybrid ops/tech profile capable of managing a Shopify platform end-to-end, implementing Odoo ERP, and optimizing organic visibility (SEO/GEO) for premium brands. Multilingual, remote-ready, with a deep sensitivity to the luxury and cosmetics sector.";
+
   return (
     <section id="about" className="py-24 px-4">
       <div className="max-w-4xl mx-auto section-fade-in text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-10 text-gradient tracking-wider uppercase">{t("about.title")}</h2>
         <div className="space-y-5 text-muted-foreground text-lg leading-relaxed">
-          <p>{t("about.p1")}</p>
-          <p>{t("about.p2")}</p>
+          {theme === "luxury" ? (
+            <p>{luxuryAbout}</p>
+          ) : (
+            <>
+              <p>{t("about.p1")}</p>
+              <p>{t("about.p2")}</p>
+            </>
+          )}
         </div>
 
         {/* Info lines */}
