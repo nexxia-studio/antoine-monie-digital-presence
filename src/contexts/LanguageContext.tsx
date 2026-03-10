@@ -37,7 +37,7 @@ const translations: Record<string, Record<Lang, string>> = {
     fr: "J'apporte une combinaison rare : un bagage technique en développement front-end et UX/UI, une expérience concrète en opérations, et un esprit analytique structuré forgé durant mes années de contrôle aérien.",
   },
   "about.info1": { en: "Based in Belgium", fr: "Basé en Belgique" },
-  "about.info2": { en: "FR / EN / DE / NL / ES", fr: "FR / EN / DE / NL / ES" },
+  "about.info2": { en: "FR — EN", fr: "FR — EN" },
   "about.info3": { en: "Open to remote or hybrid positions in Belgium", fr: "Disponible en remote ou hybride en Belgique" },
   "about.badge1": { en: "Shopify Multi-Brand Expert", fr: "Expert Shopify Multi-Marques" },
   "about.badge2": { en: "Odoo ERP Implementation", fr: "Implémentation Odoo ERP" },
