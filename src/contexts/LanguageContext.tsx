@@ -134,6 +134,9 @@ const translations: Record<string, Record<Lang, string>> = {
   // Certifications
   "cert.title": { en: "Certifications & Training", fr: "Certifications & Formations" },
 
+  // FAQ
+  "faq.title": { en: "Frequently Asked Questions", fr: "Questions Fréquentes" },
+
   // Contact
   "contact.title": { en: "Let's Connect", fr: "Travaillons Ensemble" },
   "contact.intro": {
