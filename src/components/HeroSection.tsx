@@ -20,14 +20,14 @@ const subtitlesLuxuryEN = [
   "E-Commerce Operations Manager",
   "Beauty & Lifestyle Brand Specialist",
   "Shopify Multi-Brand Expert",
-  "Digital Ops — Cosmetics & Fashion",
+  "Digital Operations — Cosmetics & Beauty",
   "Odoo ERP Implementation Lead",
 ];
 const subtitlesLuxuryFR = [
-  "Ops Manager E-Commerce",
+  "Operations Manager E-Commerce",
   "Spécialiste Marques Beauty & Lifestyle",
   "Expert Shopify Multi-Marques",
-  "Ops Digitales — Cosmétiques & Mode",
+  "Operations Digitales — Cosmétiques & Beauté",
   "Lead Implémentation Odoo ERP",
 ];
 
@@ -47,8 +47,8 @@ export default function HeroSection() {
 
   const hookline = theme === "luxury"
     ? (lang === "fr"
-      ? "Beauty · Cosmétiques · Mode — une expertise ops taillée pour les marques e-commerce premium."
-      : "Beauty · Cosmetics · Fashion — ops expertise tailored for premium e-commerce brands.")
+      ? "Beauty · Cosmétiques · Beauté — une expertise operations taillée pour les marques e-commerce premium."
+      : "Beauty · Cosmetics · Beauty — operations expertise tailored for premium e-commerce brands.")
     : t("hero.hookline");
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -94,7 +94,6 @@ export default function HeroSection() {
     }
   }, [displayText, phase, currentIndex, subtitles]);
 
-  // Reset when language or theme changes
   useEffect(() => {
     setDisplayText("");
     setPhase("typing");
@@ -145,7 +144,7 @@ export default function HeroSection() {
         </div>
 
         {/* Photo */}
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 relative z-10 mb-8 md:mb-0">
           <div className="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden glow-border border-4 border-primary/30">
             <img
               src={photoUrl}
@@ -158,10 +157,10 @@ export default function HeroSection() {
       </div>
 
       {/* Value proposition cards */}
-      <div className="absolute bottom-8 left-0 right-0 z-10 px-4">
+      <div className="absolute bottom-8 left-0 right-0 z-[5] px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
           {valueProps.map(({ icon: Icon, titleKey, descKey }) => (
-            <div key={titleKey} className="rounded-xl border border-border bg-card/80 backdrop-blur-sm p-4 text-center">
+            <div key={titleKey} className="rounded-xl border border-border bg-card/80 backdrop-blur-sm p-4 text-center tag-luxury">
               <Icon size={22} className="text-primary mx-auto mb-2" />
               <h3 className="text-sm font-bold text-foreground mb-1">{t(titleKey)}</h3>
               <p className="text-xs text-muted-foreground">{t(descKey)}</p>

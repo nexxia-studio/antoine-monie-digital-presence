@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useTheme } from "@/contexts/ThemeContext";
 import { ChevronDown, MapPin, Calendar } from "lucide-react";
 
 interface ExpEntry {
@@ -14,7 +15,7 @@ interface ExpEntry {
 const entries: ExpEntry[] = [
   {
     roleKey: "exp.1.role", companyKey: "exp.1.company", periodKey: "exp.1.period", locationKey: "exp.1.location",
-    tags: ["Ops", "WebOps", "SEO", "ProcessImprovement", "Monday"],
+    tags: ["Operations", "WebOps", "SEO", "ProcessImprovement", "Monday"],
     bulletKeys: ["exp.1.b1", "exp.1.b2", "exp.1.b3", "exp.1.b4", "exp.1.b5"],
   },
   {
@@ -46,6 +47,7 @@ const entries: ExpEntry[] = [
 
 export default function ExperienceSection() {
   const { t } = useLanguage();
+  const { theme } = useTheme();
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
 
   return (
@@ -80,7 +82,7 @@ export default function ExperienceSection() {
                     </div>
                     <div className="flex flex-wrap gap-2 mt-3">
                       {entry.tags.map((tag) => (
-                        <span key={tag} className="px-2 py-0.5 rounded-full text-xs font-medium bg-secondary/15 text-secondary">
+                        <span key={tag} className="px-2 py-0.5 rounded-full text-xs font-medium bg-secondary/15 text-secondary tag-luxury">
                           #{tag}
                         </span>
                       ))}
