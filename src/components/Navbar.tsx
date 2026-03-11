@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
-import { Zap, Sparkles, Menu, X } from "lucide-react";
+import { Menu, X, Linkedin } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const sections = ["about", "skills", "experience", "projects", "certifications", "faq", "contact"];
 
@@ -24,7 +25,7 @@ function AMLogoSVG() {
 
 export default function Navbar() {
   const { lang, setLang, t } = useLanguage();
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
   const [active, setActive] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -88,9 +89,17 @@ export default function Navbar() {
             </button>
           </div>
 
-          <button onClick={toggleTheme} className="p-2 rounded-lg hover:bg-muted transition-colors text-muted-foreground hover:text-foreground" title={theme === "tech" ? "Switch to Luxury" : "Switch to Tech"}>
-            {theme === "tech" ? <Sparkles size={18} /> : <Zap size={18} />}
-          </button>
+          <ThemeToggle />
+
+          <a
+            href="https://www.linkedin.com/in/antoine-monie"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-lg hover:bg-muted transition-colors text-muted-foreground hover:text-primary hidden sm:flex"
+            title="LinkedIn"
+          >
+            <Linkedin size={18} />
+          </a>
 
           <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors text-muted-foreground">
             {mobileOpen ? <X size={20} /> : <Menu size={20} />}
