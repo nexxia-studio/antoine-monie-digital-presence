@@ -18,9 +18,11 @@ export default function AboutSection() {
     { icon: Briefcase, key: "about.info3" },
   ];
 
-  const luxuryAbout = lang === "fr"
-    ? "Spécialiste des opérations e-commerce pour marques beauty et lifestyle, avec une expérience concrète sur des enseignes cosmétiques (Gemology, Origine, HElo Cosmetics) et mode (Ouate Le Touquet). Profil hybride ops/tech, capable de gérer une plateforme Shopify de A à Z, d'implémenter un ERP Odoo et d'optimiser la visibilité organique (SEO/GEO) d'une marque premium. Multilingue, remote-ready, sensible aux codes du secteur luxe et cosmétique."
-    : "E-commerce operations specialist for beauty and lifestyle brands, with hands-on experience managing cosmetics brands (Gemology, Origine, HElo Cosmetics) and fashion (Ouate Le Touquet). A hybrid ops/tech profile capable of managing a Shopify platform end-to-end, implementing Odoo ERP, and optimizing organic visibility (SEO/GEO) for premium brands. Multilingual, remote-ready, with a deep sensitivity to the luxury and cosmetics sector.";
+  const luxuryAboutFR = "Spécialiste des opérations e-commerce pour marques beauty et lifestyle, avec une expérience concrète sur des enseignes cosmétiques (Gemology Cosmetics Paris, Origine L'art cosmétique, Ouate Le Touquet-Paris-Plage) et le distributeur HElo Cosmetics (Belgique & Luxembourg). Profil hybride operations/tech, capable de gérer une plateforme Shopify de A à Z, d'implémenter un ERP Odoo et d'optimiser la visibilité organique (SEO/GEO) d'une marque premium. Multilingue, remote-ready, sensible aux codes du secteur luxe et cosmétique.";
+
+  const luxuryAboutEN = "E-commerce operations specialist for beauty and lifestyle brands, with hands-on experience managing cosmetics brands (Gemology Cosmetics Paris, Origine L'art cosmétique, Ouate Le Touquet-Paris-Plage) and the distributor HElo Cosmetics (Belgium & Luxembourg). A hybrid operations/tech profile capable of managing a Shopify platform end-to-end, implementing Odoo ERP, and optimizing organic visibility (SEO/GEO) for premium brands. Multilingual, remote-ready, with a deep sensitivity to the luxury and cosmetics sector.";
+
+  const luxuryAbout = lang === "fr" ? luxuryAboutFR : luxuryAboutEN;
 
   return (
     <section id="about" className="py-24 px-4">
@@ -49,7 +51,7 @@ export default function AboutSection() {
 
         <div className="flex flex-wrap gap-4 mt-10 justify-center">
           {badges.map(({ icon: Icon, key }) => (
-            <div key={key} className="flex items-center gap-2 px-5 py-3 rounded-lg bg-card border border-border text-sm font-medium text-foreground">
+            <div key={key} className="flex items-center gap-2 px-5 py-3 rounded-lg bg-card border border-border text-sm font-medium text-foreground tag-luxury">
               <Icon size={18} className="text-primary" />
               {t(key)}
             </div>

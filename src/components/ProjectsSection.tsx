@@ -44,7 +44,6 @@ export default function ProjectsSection() {
                     loading="lazy"
                   />
                 )}
-                {/* Hover overlay */}
                 {proj.url && (
                   <a
                     href={proj.url}
@@ -62,13 +61,13 @@ export default function ProjectsSection() {
                 <div className="flex items-center gap-2">
                   <h3 className="text-lg font-semibold text-foreground">{t(proj.nameKey)}</h3>
                   {proj.isCaseStudy && (
-                    <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-secondary/15 text-secondary">{t("projects.caseStudy")}</span>
+                    <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-secondary/15 text-secondary tag-luxury">{t("projects.caseStudy")}</span>
                   )}
                 </div>
                 <p className="text-sm text-muted-foreground mt-2 line-clamp-2">{t(proj.descKey)}</p>
                 <div className="flex flex-wrap gap-1.5 mt-3">
                   {proj.tags.map((tag) => (
-                    <span key={tag} className="px-2 py-0.5 rounded-full text-xs bg-muted text-muted-foreground">#{tag}</span>
+                    <span key={tag} className="px-2 py-0.5 rounded-full text-xs bg-muted text-muted-foreground tag-luxury">#{tag}</span>
                   ))}
                 </div>
                 {proj.url && (
