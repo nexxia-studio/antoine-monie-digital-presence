@@ -168,6 +168,32 @@ const translations: Record<string, Record<Lang, string>> = {
 
   // Projects overlay
   "projects.viewProject": { en: "View project →", fr: "Voir le projet →" },
+
+  // Metrics
+  "metrics.title.tech": { en: "Results & Impact", fr: "Résultats & Impact" },
+  "metrics.title.luxury": { en: "Achievements", fr: "Réalisations" },
+  "metrics.1": { en: "Shopify stores managed simultaneously", fr: "Boutiques Shopify gérées simultanément" },
+  "metrics.2": { en: "Cosmetics brands — full e-commerce ops", fr: "Marques cosmétiques — opérations e-commerce complètes" },
+  "metrics.3": { en: "Odoo ERP implemented from scratch", fr: "ERP Odoo implémenté de zéro" },
+  "metrics.4": { en: "Years in digital operations & e-commerce", fr: "Années en opérations digitales & e-commerce" },
+
+  // Testimonials
+  "testimonials.title": { en: "What They Say", fr: "Ce qu'ils disent" },
+  "testimonial.1.text": {
+    en: "Antoine completely transformed our digital presence. He managed our Gemology, Origine and Ouate stores on Shopify, set up our Odoo ERP and optimized our SEO — all with impressive autonomy and rigor. A rare profile that understands both business and technology.",
+    fr: "Antoine a complètement transformé notre présence digitale. Il a géré nos boutiques Gemology, Origine et Ouate sur Shopify, mis en place notre ERP Odoo et optimisé notre référencement — le tout avec une autonomie et une rigueur impressionnantes. Un profil rare qui comprend à la fois le business et la technique.",
+  },
+  "testimonial.1.role": { en: "Administrator & Beauty Coach — HElo Cosmetics", fr: "Administratrice & Beauty Coach — HElo Cosmetics" },
+  "testimonial.2.text": {
+    en: "An atypical profile in the best sense. Antoine brings a real product vision to his work, which changes everything in terms of quality. Our e-commerce platform has never run so well.",
+    fr: "Profil atypique dans le bon sens du terme. Antoine apporte une vraie vision produit à ses missions, ce qui change tout dans la qualité. Notre plateforme e-commerce n'a jamais aussi bien tourné.",
+  },
+  "testimonial.2.role": { en: "E-Commerce Manager — Cosmetics Brand", fr: "E-Commerce Manager — Marque Cosmétique" },
+  "testimonial.3.text": {
+    en: "Antoine delivered our Odoo implementation on time and within scope — which is rare. He also trained the entire team with patience and clear documentation. Would work with him again without hesitation.",
+    fr: "Antoine a livré notre implémentation Odoo dans les temps et le périmètre prévu — ce qui est rare. Il a aussi formé toute l'équipe avec patience et une documentation claire. Je retravaillerais avec lui sans hésitation.",
+  },
+  "testimonial.3.role": { en: "Operations Director — Digital Agency", fr: "Directeur des Opérations — Agence Digitale" },
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
