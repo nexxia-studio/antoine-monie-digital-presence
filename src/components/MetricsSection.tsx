@@ -4,10 +4,10 @@ import { useTheme } from "@/contexts/ThemeContext";
 import { ShoppingBag, Sparkles, Settings2, TrendingUp } from "lucide-react";
 
 const metrics = [
-  { value: 4, suffix: "", icon: ShoppingBag, labelKey: "metrics.1" },
-  { value: 3, suffix: "", icon: Sparkles, labelKey: "metrics.2" },
-  { value: 1, suffix: "", icon: Settings2, labelKey: "metrics.3" },
-  { value: 5, suffix: "+", icon: TrendingUp, labelKey: "metrics.4" },
+  { value: 12, suffix: "", icon: ShoppingBag, labelKey: "metrics.1" },
+  { value: 6, suffix: "", icon: Sparkles, labelKey: "metrics.2" },
+  { value: 4, suffix: "", icon: Settings2, labelKey: "metrics.3" },
+  { value: 8, suffix: "+", icon: TrendingUp, labelKey: "metrics.4" },
 ];
 
 function AnimatedNumber({ target, suffix, inView }: { target: number; suffix: string; inView: boolean }) {

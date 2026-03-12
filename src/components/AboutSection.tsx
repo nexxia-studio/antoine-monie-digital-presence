@@ -18,11 +18,11 @@ export default function AboutSection() {
     { icon: Briefcase, key: "about.info3" },
   ];
 
-  const luxuryAboutFR = "Spécialiste des opérations e-commerce pour marques beauty et lifestyle, avec une expérience concrète sur des enseignes cosmétiques (Gemology Cosmetics Paris, Origine L'art cosmétique, Ouate Le Touquet-Paris-Plage) et le distributeur HElo Cosmetics (Belgique & Luxembourg). Profil hybride operations/tech, capable de gérer une plateforme Shopify de A à Z, d'implémenter un ERP Odoo et d'optimiser la visibilité organique (SEO/GEO) d'une marque premium. Multilingue, remote-ready, sensible aux codes du secteur luxe et cosmétique.";
+  const luxuryP1FR = "Spécialiste des opérations e-commerce pour marques beauty et lifestyle, avec une expérience concrète sur des enseignes cosmétiques (Gemology Cosmetics Paris, Origine L'art cosmétique, Ouate Le Touquet-Paris-Plage) et le distributeur HElo Cosmetics (Belgique & Luxembourg).";
+  const luxuryP2FR = "Profil hybride operations/tech, capable de gérer une plateforme Shopify de A à Z, d'implémenter un ERP Odoo et d'optimiser la visibilité organique (SEO/GEO) d'une marque premium. Multilingue, remote-ready, sensible aux codes du secteur luxe et cosmétique.";
 
-  const luxuryAboutEN = "E-commerce operations specialist for beauty and lifestyle brands, with hands-on experience managing cosmetics brands (Gemology Cosmetics Paris, Origine L'art cosmétique, Ouate Le Touquet-Paris-Plage) and the distributor HElo Cosmetics (Belgium & Luxembourg). A hybrid operations/tech profile capable of managing a Shopify platform end-to-end, implementing Odoo ERP, and optimizing organic visibility (SEO/GEO) for premium brands. Multilingual, remote-ready, with a deep sensitivity to the luxury and cosmetics sector.";
-
-  const luxuryAbout = lang === "fr" ? luxuryAboutFR : luxuryAboutEN;
+  const aboutP1EN = "E-commerce operations specialist for beauty and lifestyle brands, with hands-on experience managing cosmetics brands (Gemology Cosmetics Paris, Origine L'art cosmétique, Ouate Le Touquet-Paris-Plage) and the distributor HElo Cosmetics (Belgium & Luxembourg).";
+  const aboutP2EN = "A hybrid operations/tech profile capable of managing a Shopify platform end-to-end, implementing Odoo ERP, and optimizing organic visibility (SEO/GEO) for premium brands. Multilingual, remote-ready, with a deep sensitivity to the luxury and cosmetics sector.";
 
   return (
     <section id="about" className="py-24 px-4">
@@ -30,11 +30,14 @@ export default function AboutSection() {
         <h2 className="text-3xl md:text-4xl font-bold mb-10 text-gradient tracking-wider uppercase">{t("about.title")}</h2>
         <div className="space-y-5 text-muted-foreground text-lg leading-relaxed">
           {theme === "luxury" ? (
-            <p>{luxuryAbout}</p>
+            <>
+              <p>{lang === "fr" ? luxuryP1FR : aboutP1EN}</p>
+              <p className="mt-6">{lang === "fr" ? luxuryP2FR : aboutP2EN}</p>
+            </>
           ) : (
             <>
               <p>{t("about.p1")}</p>
-              <p>{t("about.p2")}</p>
+              <p className="mt-6">{t("about.p2")}</p>
             </>
           )}
         </div>

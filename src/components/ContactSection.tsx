@@ -3,7 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Mail, Phone, MapPin, Linkedin, Send, CheckCircle, AlertCircle } from "lucide-react";
 
 export default function ContactSection() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -62,7 +62,21 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left */}
           <div className="text-center lg:text-left">
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{t("contact.intro")}</p>
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              {lang === "fr" ? (
+                <>
+                  Ouvert à de nouvelles opportunités<br />
+                  Postes en agence Shopify, opérations e-commerce, ou missions BA Odoo.<br />
+                  Remote prioritaire, basé en Belgique.
+                </>
+              ) : (
+                <>
+                  Open to new opportunities<br />
+                  Shopify agency roles, e-commerce ops positions, or Odoo BA mandates.<br />
+                  Remote-first, Belgium-based.
+                </>
+              )}
+            </p>
             <div className="space-y-4 inline-flex flex-col items-start">
               <a href="mailto:monie.ant@gmail.com" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
                 <Mail size={18} className="text-primary" />
