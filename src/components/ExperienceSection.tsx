@@ -69,7 +69,7 @@ export default function ExperienceSection() {
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex-1">
                         <h3 className="text-lg font-semibold text-foreground">{t(entry.roleKey)}</h3>
-                        <p className="text-sm font-medium mt-1" style={{ color: "#1E3A5F" }}>{t(entry.companyKey)}</p>
+                        <p className="text-sm font-medium mt-1 text-primary">{t(entry.companyKey)}</p>
                         <div className="flex flex-wrap items-center gap-3 mt-2 text-xs text-muted-foreground">
                           <span className="flex items-center gap-1"><Calendar size={12} />{t(entry.periodKey)}</span>
                           <span className="flex items-center gap-1"><MapPin size={12} />{t(entry.locationKey)}</span>

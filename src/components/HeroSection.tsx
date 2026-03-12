@@ -45,12 +45,6 @@ export default function HeroSection() {
     ? (lang === "fr" ? subtitlesLuxuryFR : subtitlesLuxuryEN)
     : (lang === "fr" ? subtitlesTechFR : subtitlesTechEN);
 
-  const hookline = theme === "luxury"
-    ? (lang === "fr"
-      ? "Beauty · Cosmétiques · Beauté — une expertise operations taillée pour les marques e-commerce premium."
-      : "Beauty · Cosmetics · Beauty — operations expertise tailored for premium e-commerce brands.")
-    : t("hero.hookline");
-
   const [currentIndex, setCurrentIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [phase, setPhase] = useState<"typing" | "waiting" | "deleting" | "pause">("typing");
@@ -103,19 +97,31 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
       <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 flex flex-col lg:flex-row items-center gap-12">
-        {/* Text */}
-        <div className="flex-1 text-center lg:text-left">
+        {/* Text — order 1 on mobile */}
+        <div className="flex-1 text-center lg:text-left order-1">
           <h1 className="text-5xl md:text-7xl font-black tracking-wider mb-4 text-foreground uppercase">
             Antoine <span className="text-gradient">Monie</span>
           </h1>
-          <div className="h-10 mb-4">
+          <h2 className="h-10 mb-4">
             <span className="text-xl md:text-2xl font-subheading font-semibold text-primary">
               {displayText}
             </span>
             <span className="cursor-blink text-primary text-2xl">|</span>
-          </div>
+          </h2>
           <p className="text-sm md:text-base italic text-muted-foreground/75 max-w-xl mb-6 mx-auto lg:mx-0">
-            {hookline}
+            {theme === "luxury" ? (
+              lang === "fr" ? (
+                <>Beauty · Cosmétiques · Fashion<br />une expertise operations taillée pour les marques e-commerce premium.</>
+              ) : (
+                <>Beauty · Cosmetics · Fashion<br />operations expertise tailored for premium e-commerce brands.</>
+              )
+            ) : (
+              lang === "fr" ? (
+                <>Opérations, tech et UX<br />pour livrer des produits e-commerce performants.</>
+              ) : (
+                <>Bridging operations, tech, and UX<br />to deliver high-performing e-commerce products.</>
+              )
+            )}
           </p>
           <p className="text-lg text-muted-foreground max-w-xl mb-8 mx-auto lg:mx-0">
             {t("hero.tagline")}
@@ -143,8 +149,8 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Photo */}
-        <div className="flex-shrink-0 relative z-10 mb-8 md:mb-0">
+        {/* Photo — order 2 on desktop, order 4 on mobile */}
+        <div className="flex-shrink-0 relative z-10 order-4 lg:order-2">
           <div className="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden glow-border border-4 border-primary/30">
             <img
               src={photoUrl}
@@ -156,14 +162,24 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Value proposition cards */}
-      <div className="absolute bottom-8 left-0 right-0 z-[5] px-4">
+      {/* Value proposition cards — order 5 on mobile */}
+      <div className="absolute bottom-8 left-0 right-0 z-[5] px-4 lg:relative lg:bottom-auto order-5 lg:order-3">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
           {valueProps.map(({ icon: Icon, titleKey, descKey }) => (
             <div key={titleKey} className="rounded-xl border border-border bg-card/80 backdrop-blur-sm p-4 text-center tag-luxury">
               <Icon size={22} className="text-primary mx-auto mb-2" />
               <h3 className="text-sm font-bold text-foreground mb-1">{t(titleKey)}</h3>
-              <p className="text-xs text-muted-foreground">{t(descKey)}</p>
+              <p className="text-xs text-muted-foreground">
+                {descKey === "hero.val3.desc" ? (
+                  lang === "fr" ? (
+                    <>FR · EN · DE · NL<br />disponible en remote ou hybride</>
+                  ) : (
+                    <>FR · EN · DE · NL<br />available remote or hybrid</>
+                  )
+                ) : (
+                  t(descKey)
+                )}
+              </p>
             </div>
           ))}
         </div>
