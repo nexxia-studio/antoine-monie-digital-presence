@@ -121,7 +121,7 @@ export default function HeroSection() {
       <div className="relative z-[5] px-4 pb-12 w-full">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
           {valueProps.map(({ icon: Icon, titleKey, descKey }) => (
-            <div key={titleKey} className="rounded-xl border border-border bg-card/80 backdrop-blur-sm p-4 text-center tag-luxury">
+            <div key={titleKey} className="glass-card p-4 text-center">
               <Icon size={22} className="text-primary mx-auto mb-2" />
               <h3 className="text-sm font-bold text-foreground mb-1">{t(titleKey)}</h3>
               <p className="text-xs text-muted-foreground">
