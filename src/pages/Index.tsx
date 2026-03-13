@@ -13,7 +13,7 @@ import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import ScrollToTop from "@/components/ScrollToTop";
 import Particles from "@/components/Particles";
-import { Linkedin } from "lucide-react";
+import { Linkedin, Github } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
