@@ -13,7 +13,7 @@ import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import ScrollToTop from "@/components/ScrollToTop";
 import Particles from "@/components/Particles";
-import { Linkedin } from "lucide-react";
+import { Linkedin, Github } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -53,6 +53,20 @@ export default function Index() {
               className="inline-flex items-center gap-1.5 hover:text-primary transition-colors"
             >
               <Linkedin size={14} /> LinkedIn
+            </a>
+            <a
+              href="https://github.com/nexxia-studio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-primary transition-colors"
+            >
+              <Github size={14} /> GitHub
+            </a>
+          </div>
+          <div className="text-muted-foreground">
+            Proudly created with 💙 by{" "}
+            <a href="https://www.nexxia.pro/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+              Nexxia. Studio
             </a>
           </div>
           <div className="flex items-center justify-center gap-2 flex-wrap">
