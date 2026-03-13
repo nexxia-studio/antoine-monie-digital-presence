@@ -54,6 +54,20 @@ export default function Index() {
             >
               <Linkedin size={14} /> LinkedIn
             </a>
+            <a
+              href="https://github.com/nexxia-studio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-primary transition-colors"
+            >
+              <Github size={14} /> GitHub
+            </a>
+          </div>
+          <div className="text-muted-foreground">
+            Proudly created with 💙 by{" "}
+            <a href="https://www.nexxia.pro/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+              Nexxia. Studio
+            </a>
           </div>
           <div className="flex items-center justify-center gap-2 flex-wrap">
             <span>© {new Date().getFullYear()} Antoine Monie</span>
