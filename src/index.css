@@ -279,10 +279,44 @@
   50%       { box-shadow: 0 0 14px 4px rgba(201, 168, 76, 0.55); }
 }
 
+@keyframes liquid-morph {
+  0%   { border-radius: 50px; }
+  25%  { border-radius: 40px 60px 55px 45px; }
+  50%  { border-radius: 55px 45px 40px 60px; }
+  75%  { border-radius: 45px 55px 60px 40px; }
+  100% { border-radius: 50px; }
+}
+
 /* Luxury mode tag overrides */
 .luxury .tag-luxury {
   background: rgba(139, 115, 85, 0.15) !important;
   border: 1px solid rgba(139, 115, 85, 0.5) !important;
   color: #6B4F2A !important;
   font-weight: 500 !important;
+}
+
+/* Hero cards — Liquid Glass */
+.glass-card {
+  background: rgba(15, 25, 40, 0.55);
+  backdrop-filter: blur(20px) saturate(1.6) brightness(0.9);
+  -webkit-backdrop-filter: blur(20px) saturate(1.6) brightness(0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  transition: background 300ms ease, box-shadow 300ms ease;
+}
+.glass-card:hover {
+  background: rgba(15, 25, 40, 0.7);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+.luxury .glass-card {
+  background: rgba(139, 115, 85, 0.12);
+  border: 1px solid rgba(139, 115, 85, 0.2);
+  border-top: 1px solid rgba(139, 115, 85, 0.3);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 8px 32px rgba(100, 80, 50, 0.15), 0 2px 8px rgba(100, 80, 50, 0.1);
+}
+.luxury .glass-card:hover {
+  background: rgba(139, 115, 85, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 12px 40px rgba(100, 80, 50, 0.2);
 }
