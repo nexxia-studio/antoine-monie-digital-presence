@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Mail, Phone, MapPin, Linkedin, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Send, CheckCircle, AlertCircle, Globe } from "lucide-react";
 
 export default function ContactSection() {
   const { t, lang } = useLanguage();
