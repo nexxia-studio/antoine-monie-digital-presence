@@ -7,8 +7,10 @@ export default function ThemeToggle() {
   return (
     <div className="flex items-center gap-2">
       <span
-        className={`text-[11px] transition-all duration-300 hidden sm:inline ${
-          !isTech ? "opacity-100 font-semibold text-foreground" : "opacity-50 text-muted-foreground"
+        className={`text-[11px] transition-all duration-200 ease-out hidden sm:inline hover:-translate-y-[2px] ${
+          !isTech 
+            ? "opacity-100 font-semibold text-foreground" 
+            : "opacity-50 text-muted-foreground hover:opacity-100"
         }`}
         style={{ fontFamily: "'Cormorant Garamond', serif" }}
       >
@@ -17,7 +19,7 @@ export default function ThemeToggle() {
 
       <button
         onClick={toggleTheme}
-        className="relative w-[72px] h-[36px] rounded-full transition-all duration-[600ms] ease-[cubic-bezier(0.68,-0.55,0.27,1.55)] focus:outline-none focus:ring-2 focus:ring-ring/40 flex-shrink-0"
+        className={`relative w-[72px] h-[36px] rounded-full transition-all duration-[600ms] ease-[cubic-bezier(0.68,-0.55,0.27,1.55)] focus:outline-none focus:ring-2 focus:ring-ring/40 flex-shrink-0 animate-[${isTech ? 'glow-breathe-tech' : 'glow-breathe-luxury'}_3.5s_ease-in-out_infinite]`}
         style={{
           background: isTech
             ? "linear-gradient(135deg, #0F1117, #1a1f2e)"
@@ -88,8 +90,10 @@ export default function ThemeToggle() {
       </button>
 
       <span
-        className={`text-[11px] transition-all duration-300 hidden sm:inline ${
-          isTech ? "opacity-100 font-semibold text-foreground" : "opacity-50 text-muted-foreground"
+        className={`text-[11px] transition-all duration-200 ease-out hidden sm:inline hover:-translate-y-[2px] ${
+          isTech 
+            ? "opacity-100 font-semibold text-foreground" 
+            : "opacity-50 text-muted-foreground hover:opacity-100"
         }`}
       >
         Tech
