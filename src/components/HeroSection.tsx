@@ -100,7 +100,7 @@ export default function HeroSection() {
             <button onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })} className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity flex items-center gap-2">
               <ArrowDown size={18} />{t("hero.viewProjects")}
             </button>
-            <a href={lang === "fr" ? "/Antoine_Monie_CV_2026_FR.pdf" : "/Antoine_Monie_CV_2026_EN.pdf"} download className="px-6 py-3 rounded-lg border border-border text-foreground font-semibold hover:bg-muted transition-colors flex items-center gap-2">
+            <a href={lang === "fr" ? "/Antoine_Monie_CV_2026_FR.pdf" : "/Antoine_Monie_CV_2026_EN.pdf"} download className="px-6 py-3 rounded-lg text-foreground font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-[1.04] hover:shadow-lg" style={{ border: "1px solid #818998", background: "#81899852" }} onMouseEnter={e => (e.currentTarget.style.background = "#81899878")} onMouseLeave={e => (e.currentTarget.style.background = "#81899852")}>
               <Download size={18} />{t("hero.downloadCV")}
             </a>
           </div>
