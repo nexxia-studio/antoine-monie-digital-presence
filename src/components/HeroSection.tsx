@@ -100,8 +100,8 @@ export default function HeroSection() {
             <button onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })} className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity flex items-center gap-2">
               <ArrowDown size={18} />{t("hero.viewProjects")}
             </button>
-            <a href="/Antoine_Monie_Resume_2026.pdf" download="Antoine_Monie_Resume_2026.pdf" className="px-6 py-3 rounded-lg border border-border text-foreground font-semibold hover:bg-muted transition-colors flex items-center gap-2">
-              <Download size={18} />Download CV
+            <a href={lang === "fr" ? "/Antoine_Monie_CV_2026_FR.pdf" : "/Antoine_Monie_CV_2026_EN.pdf"} download className="px-6 py-3 rounded-lg border border-border text-foreground font-semibold hover:bg-muted transition-colors flex items-center gap-2">
+              <Download size={18} />{t("hero.downloadCV")}
             </a>
           </div>
           <div className="flex items-center gap-2 text-muted-foreground justify-center lg:justify-start">
